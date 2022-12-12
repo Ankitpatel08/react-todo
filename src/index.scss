@@ -1,0 +1,146 @@
+@import "../node_modules/bulma/css/bulma.css";
+
+$color_1: #fff;
+$background-color_1: #00d1b2;
+$background-color_2: hsla(0, 0%, 4%, .2);
+
+.app {
+    margin-bottom: 215px;
+    position: relative;
+
+    h1 {
+        font-size: 48px;
+        font-weight: 800;
+        margin: auto;
+        max-width: 1024px;
+        padding: 20px;
+    }
+}
+
+.todo-create {
+    background-color: $background-color_1;
+    bottom: 0;
+    padding: 20px 40px 30px;
+    position: fixed;
+    width: 100%;
+
+    h3 {
+        color: $color_1;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    form {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.todo-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1024px;
+}
+
+.todo-show {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    align-self: flex-start;
+    box-shadow: 0 0 4px #c8c8c8;
+    position: relative;
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .actions {
+        margin-left: 10px;
+        position: absolute;
+        right: 0;
+        top: 5px;
+    }
+
+    img {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    button {
+        margin-right: 5px;
+    }
+
+    .edit {
+        background-color: $background-color_2;
+        border: none;
+        border-radius: 9999px;
+        cursor: pointer;
+        display: inline-block;
+        flex-grow: 0;
+        flex-shrink: 0;
+        font-size: 0;
+        height: 20px;
+        max-height: 20px;
+        max-width: 20px;
+        min-height: 20px;
+        min-width: 20px;
+        outline: none;
+        pointer-events: auto;
+        position: relative;
+        vertical-align: top;
+        width: 20px;
+
+        &:after {
+            color: $color_1;
+            content: "✎";
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            height: 20px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%) rotate(20deg);
+            transform: translateX(-50%) translateY(-50%) rotate(20deg);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            width: 20px;
+            z-index: 10;
+        }
+    }
+}
+
+.todo-edit {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    button {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .todo-list {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: auto;
+        max-width: 1024px;
+    }
+}
+
+@media screen and (max-width:961px) {
+    .todo-show {
+        align-self: center;
+    }
+}
